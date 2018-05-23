@@ -2,6 +2,15 @@
 
 [TOC]
 
+## 2018.05.10 - week11 - hw2
+
+1. 在menuscene中新建start跳转，跳转函数和图片层级 https://blog.csdn.net/gzy252050968/article/details/50524383
+2. 在gamescene中新建背景，layer 和 锚点的设置定位坐标 https://blog.csdn.net/xuguangsoft/article/details/8425623
+3. https://blog.csdn.net/u013517637/article/details/45483865 
+4. 添加动画的基础设置 对照脚步跳动的动画
+5. 晚上点击事件 放奶酪 老鼠来吃 奶酪消失 
+6. 完善点击shoot函数，老鼠跑掉 放下钻石 http://www.cnblogs.com/slysky/p/3824773.html
+
 ## 2018.05.09 - week9 - hw1
 
 <u>准备</u>
