@@ -1,8 +1,105 @@
-# Cocos2d-x_Study note
+# 实验报告（Cocos2d-x_Study note）
+
+### 学号：16340216
+
+### 姓名：王健豪
+
+### 班级：软工五班
+
+### 
 
 [TOC]
 
-## 2018.05.10 - week11 - hw2
+## 2018.05.29 - week12 - hw11
+
+参考资料：ppt 和 blog
+
+```C++
+// 创建倒计时
+	time = Label::createWithTTF("120", "fonts/arial.ttf", 36);
+	time->setPosition(Vec2(origin.x+visibleSize.width/2, origin.y+visibleSize.height-30));
+	this->addChild(time);
+	schedule(schedule_selector(HelloWorld::updateTime), 1);
+	dtime = 120;
+```
+
+```C++
+// 从贴图中以像素单位切割，创建关键帧
+	auto frame0 = SpriteFrame::createWithTexture(texture, CC_RECT_PIXELS_TO_POINTS(Rect(0, 0, 113, 113)));
+	// 使用第一帧创建精灵
+	player = Sprite::createWithSpriteFrame(frame0);
+	player->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height/2));
+	addChild(player, 3);
+```
+
+```C++
+// 死亡动画(帧数：22，高：90，宽：79）
+	auto texture2 = Director::getInstance()->getTextureCache()->addImage("$lucia_dead.png");
+	dead.reserve(22);
+	for (int i = 0; i < 22; i++) {
+		auto frame = SpriteFrame::createWithTexture(texture2, CC_RECT_PIXELS_TO_POINTS(Rect(79*i, 0, 90, 79)));
+		dead.pushBack(frame);
+	}
+	auto dead_animation = Animation::createWithSpriteFrames(dead, 0.1f);
+	dead_animation->setRestoreOriginalFrame(true);
+	AnimationCache::getInstance()->addAnimation(dead_animation, "deadAnimation");
+```
+
+```C++
+// 方向键系列
+	auto buttonW = Button::create("W.png", "W.png");
+	buttonW->setPosition(Vec2(origin.x + 60, origin.y + 60));
+// W键事件处理函数
+	buttonW->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		switch (type) {
+		case ui::Widget::TouchEventType::BEGAN:
+			schedule(schedule_selector(HelloWorld::moveW), 0.3f);
+			break;
+		case ui::Widget::TouchEventType::ENDED:
+			unschedule(schedule_selector(HelloWorld::moveW));
+			break;
+		}
+	});
+// 技能键X的事件处理函数
+	buttonX->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
+		switch (type) {
+		case ui::Widget::TouchEventType::BEGAN:
+			break;
+		case ui::Widget::TouchEventType::ENDED:
+			if (isDone == false) return; // 动画未完成，不能执行新动画
+			else isDone = false; // 开始执行动画
+			if (pT->getPercentage() == 0) return; // 进度条为0时不可再执行该动画
+			auto callFunc = CallFunc::create([&] {isDone = true; }); // 定义动画执行完毕的回调函数
+			auto seq = Sequence::createWithTwoActions(Animate::create(AnimationCache::getInstance()->getAnimation("deadAnimation")), callFunc);
+			player->runAction(seq);
+			if (pT->getPercentage() - 40 >= 0) { // 每次X操作减少进度条40
+				pT->setPercentage(pT->getPercentage() - 40);
+			}
+			else {
+				pT->setPercentage(0);
+			}
+			break;
+		}
+	});
+```
+
+```C++
+// 方向键W的移动
+void HelloWorld::moveW(float dt) {
+	auto location = player->getPosition();
+	if (location.y + 20 >= visibleSize.height) {
+		auto seq = Sequence::createWithTwoActions(MoveBy::create(0.6f, Vec2(0, visibleSize.height - location.y - 10)),
+			Animate::create(AnimationCache::getInstance()->getAnimation("runAnimation")));
+		player->runAction(seq);
+		return;
+	}
+	auto seq = Sequence::createWithTwoActions(MoveBy::create(0.6f, Vec2(0, 20)),
+		Animate::create(AnimationCache::getInstance()->getAnimation("runAnimation")));
+	player->runAction(seq);
+}
+```
+
+## 2018.05.10 - week11 - hw10
 
 1. 在menuscene中新建start跳转，跳转函数和图片层级 https://blog.csdn.net/gzy252050968/article/details/50524383
 2. 在gamescene中新建背景，layer 和 锚点的设置定位坐标 https://blog.csdn.net/xuguangsoft/article/details/8425623
@@ -11,7 +108,7 @@
 5. 晚上点击事件 放奶酪 老鼠来吃 奶酪消失 
 6. 完善点击shoot函数，老鼠跑掉 放下钻石 http://www.cnblogs.com/slysky/p/3824773.html
 
-## 2018.05.09 - week9 - hw1
+## 2018.05.09 - week9 - hw9
 
 <u>准备</u>
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" name="image" tilewidth="32" tileheight="32" tilecount="1100" columns="44">
+  <image source="image.PNG" width="1409" height="816"/>
+ </tileset>
+ <layer name="块层 1" width="35" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwN04OSGAYAQMFrrMaNbVuNG9u2Gje2bdu4XGzbtm3bdnfm7Se8EQEBASMZxWjGMJZxjGcCE5nEZKYwlWlMZwYzmcVs5jCXecwnkAUEsZBFLGYJS1nGclawic1sYSvb2M4OdrKL3exhL/vYzwEOcojDHOEoxzjOCU5yitOc4SznOM8FLnKJy1zhHvd5wEMe8ZgnPOUZz3nBS17xmje85R3v+cBHPvGZL3zlG9/5wU9+8ZuAP0QwghOCiEQiMlGISjSi8xcxiEksYhOHuMQjPglISCISk4SkJCM5KUhJKlKThrSkIz0ZyEgmcpOHvOQjPwUoyD8UojBFKEoxilOCkpSiNGUoSznKU4GKVKIyVahKNapTg5rUojZ1aEozmtOClrSiNf/Rhra0oz0d6EgnOtOFrnSjOz3oSS9604e+9KM/AxjIIAYzhKEMYwITmcRkpjCVaUxnBjOZxWzmMJd5zCeQBQSxkEUsZglLWcZyVrCSVaxmDWtZx3o2sIvd7GEv+9jPAQ5yiMMc4SjHOM4JTnKK05zhLOc4zwUuconLXOEq17jODW5yi9vc4RnPecFLXvGaN7zlHe/5wEc+8ZkvfOUb3/nBT37xm4BgPiEYwQlBSEIRmjCEJRzhiUAMYhKL2MQhLvGITwISkojEJCEpyUhOClKSitSkIS3pSE8GMpKJzGQhK9nITg5ykotCFKYIRSlGcUpQklKUpgxlKUd5KlCRSlSmClWpRnVqUJNa1KYOdalHfRrQkEY0pgltaEs72tOBjnSiM13oSje604Oe9KI3fehLP/ozgIEMYjBDGMowhjOCkYxiNGMYyzhmMJNZzGYOc5nHfAJZQBALWcRilrCUZSxnBStZxWrWsJZ1rGcDG9nEZrawlW1sZweHOMwRjnKM45zgJKc4zRnOco7zXOAil7jMFa5yjevc4Ca3uM0d7nKP+zzgIY94zBPe8Z4PfOQTn/nCV77xnR/85Be/CQjuE4IRnBCEJBShCUNYwhGeCPxJRCIRmShEJRrRSUBCEpGYJCQlGclJQUpSkZo0pCUd6clARjKRmSxkJRvZyUFOcvE3uclDXvKRnwIUpBSlKUNZylGeClSkEpWpQlWqUZ0a1KQWtalDXepRnwY0pBGNacK/NKUZzWlBS1rRmi50pRvd6UFPetGbPvSlH/0ZwEAGMZghDGUYwxnBSEYxmjGMZRzjmcBEJjGZKUxlGoEsIIiFLGIxS1jKMpazgpWsYjVrWMs61rOBjWxiM1vYyja2s4Od7GI3e9jLPvZzgFOc5gxnOcd5LnCRS1zmCle5xnVucJNb3OYOd7nHfR7wkEc85glPecZzXvCSV7zmDf8DoIx5hg==
+  </data>
+ </layer>
+</map>
