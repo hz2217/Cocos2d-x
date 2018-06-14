@@ -1,0 +1,12 @@
+https://blog.csdn.net/sh15285118586/article/details/47148287 CC_BACK
+看完ppt基本理解要做什么及相应知识 1.5h
+了解cocos2-x基本的文件结构 https://blog.csdn.net/xiaofeiaiai/article/details/9300225
+主要是appdelegate 开启 使用哪个场景 
+导演 场景 布景 角色 动作事件 https://blog.csdn.net/JarrettLife/article/details/51078694
+
+第一步 飞船键盘的左右移动控制 
+1. 键盘触控
+2. player的移动函数 https://blog.csdn.net/VermillionTear/article/details/49903265
+3 http://www.cocoachina.com/bbs/read.php?tid=219264 判断游戏对象是否在
+
+第二步 利用键盘和触摸事件实现子弹发射。
